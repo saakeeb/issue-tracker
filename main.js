@@ -11,8 +11,8 @@ function submitIssue(e) {
   //   alert("Description can't be less than 10 words");
   // }
   
-  if( !isNaN(description) || !isNaN(assignedTo)){
-    alert("You can't put negative value")
+  if( !isNaN(description) || !isNaN(assignedTo) || (description.length<10) || (assignedTo.length>15)) {
+    alert("Please check the input value")
   }
   else{
     const id = Math.floor(Math.random()*100000000);
