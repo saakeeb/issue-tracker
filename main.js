@@ -1,3 +1,4 @@
+
 document.getElementById('issueInputForm').addEventListener('submit', submitIssue);
 
 function submitIssue(e) {
@@ -5,7 +6,11 @@ function submitIssue(e) {
   const description = getInputValue('issueDescription');
   const severity = getInputValue('issueSeverity');
   const assignedTo = getInputValue('issueAssignedTo');
-
+  
+  // if(description.length<10 || assignedTo.length>15){
+  //   alert("Description can't be less than 10 words");
+  // }
+  
   if( !isNaN(description) || !isNaN(assignedTo)){
     alert("You can't put negative value")
   }
@@ -20,11 +25,11 @@ function submitIssue(e) {
     }
   
   
-  issues.push(issue);
-  localStorage.setItem('issues', JSON.stringify(issues));
+    issues.push(issue);
+    localStorage.setItem('issues', JSON.stringify(issues));
   
-  fetchIssues();
-  e.preventDefault();
+    fetchIssues();
+    e.preventDefault();
   
   }
   document.getElementById('issueInputForm').reset();
